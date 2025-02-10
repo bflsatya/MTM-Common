@@ -2,7 +2,7 @@ package com.fragmadata.mtm.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fragmadata.mtm.enums.EmailStatus;
+import com.fragmadata.mtm.enums.scheduler.EmailStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
