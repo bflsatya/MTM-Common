@@ -22,8 +22,11 @@ public class EmailInstance {
     @Column(name = "EmailInstanceID")
     private Long emailInstanceId;
 
+    @Column(name = "Uid")
+    private long uid;
+
     @Column(name = "OutlookIDForEmail")
-    private String outlookIdForEmail;
+    private String conversationId;
 
     @Column(name = "FromEmail")
     private String from;

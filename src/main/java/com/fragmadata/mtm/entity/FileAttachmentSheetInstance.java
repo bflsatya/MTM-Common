@@ -23,9 +23,13 @@ public class FileAttachmentSheetInstance {
     @Column(name = "FileAttachmentSheetInstanceID")
     private Long fileAttachmentSheetInstanceId;
 
-    @ManyToOne
-    @JoinColumn(name = "EmailAttachmentInstanceID", nullable = false)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "EmailAttachmentInstanceID", referencedColumnName = "EmailAttachmentInstanceID")
     private EmailAttachmentInstance emailAttachmentInstance;
+
+    @ManyToOne
+    @JoinColumn(name = "ParentSheetMasterID", referencedColumnName = "ParentSheetMasterID")
+    private ParentSheet parentSheetMaster;
 
     @Column(name = "SheetName")
     private String sheetName;
