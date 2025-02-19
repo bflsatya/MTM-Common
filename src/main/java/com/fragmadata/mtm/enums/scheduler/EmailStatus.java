@@ -41,6 +41,7 @@ public enum EmailStatus {
         errorStatusList.add(EMAIL_CONFIG_NOT_MATCHED.name());
         errorStatusList.add(SHEET_CONFIG_MISMATCHED.name());
         errorStatusList.add(PARSING_FAILED.name());
+        successStatusList.add(READ_COMPLETE.name());
     }
 
 
