@@ -34,13 +34,13 @@ public enum EmailStatus {
     static {
         successStatusList.add(SUCCESS.name());
         successStatusList.add(PROCESSED.name());
-
         errorStatusList.add(FAILED.name());
         errorStatusList.add(FAILURE.name());
         errorStatusList.add(CONFIG_NOT_MATCHED.name());
         errorStatusList.add(EMAIL_CONFIG_NOT_MATCHED.name());
         errorStatusList.add(SHEET_CONFIG_MISMATCHED.name());
         errorStatusList.add(PARSING_FAILED.name());
+        successStatusList.add(READ_COMPLETE.name());
     }
 
 
