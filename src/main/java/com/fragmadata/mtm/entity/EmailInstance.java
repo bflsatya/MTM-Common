@@ -1,6 +1,5 @@
 package com.fragmadata.mtm.entity;
 
-import com.fragmadata.mtm.enums.scheduler.EmailStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,10 +16,11 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "EmailInstance")
 public class EmailInstance {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EmailInstanceID")
-    private Long  emailInstanceId;
+    private Long emailInstanceId;
 
     @Column(name = "Uid")
     private long uid;
@@ -40,13 +40,15 @@ public class EmailInstance {
     @Column(name = "EmailBody")
     private String emailBody;
 
+//	@Column(name = "EmailStoredAsBLOB")
+//	private byte[] emailStoredAsBlob;
+
     @ManyToOne
-    @JoinColumn(name = "EmailMasterID")
+    @JoinColumn(name = "EmailMasterID", nullable = false)
     private Email email;
 
     @Column(name = "Status")
-    @Enumerated(EnumType.STRING)
-    private EmailStatus status;
+    private String status;
 
     @Column(name = "StatusLog")
     private String failureReason;
@@ -57,18 +59,23 @@ public class EmailInstance {
     @Column(name = "CreatedDate")
     private LocalDateTime createdDate;
 
-    @OneToMany(mappedBy = "emailInstance",
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToMany(mappedBy = "emailInstance")
     private List<EmailAttachmentInstance> emailAttachmentInstance;
 
     @OneToMany(mappedBy = "emailInstance")
     private List<MTMParsedData> mtmParsedData;
 
-    @Column(name = "EmailReceivedDateTime", nullable = false)
+    @Column(name = "EmailReceivedDateTime")
     private LocalDateTime emailReceivedDateTime;
 
-    @Column(name = "EmailFilePathInFileSystem", length = 500)
+    @Column(name = "EmailFilePathInFileSystem")
     private String emailFilePathInFileSystem;
+
+    @Column(name = "NextRetryDate")
+    private LocalDateTime nextRetryDate;
+
+    @Column(name = "RetryCount")
+    private Integer retryCount;
 
     @Column(name = "UpdatedBy")
     private String updatedBy;
@@ -76,14 +83,8 @@ public class EmailInstance {
     @Column(name = "UpdatedDate")
     private LocalDateTime updatedDate;
 
-    @Column(name = "NextRetryDate")
-    private LocalDateTime nextRetryDate;
-
-    @Column(name = "RetryCount")
-    private int retryCount;
-
     @Version
     @Column(name = "Version")
-    private Long version;
+    private Integer version;
 
 }
