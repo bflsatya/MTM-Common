@@ -59,6 +59,9 @@ public class CounterParty {
 	@Column(name = "UpdatedDate")
 	private LocalDateTime updatedDate;
 
+	@Column(name = "zipPasswords")
+	private String zipPasswords;
+	
 	@OneToMany(mappedBy = "counterParty", cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<Email> email =new ArrayList<>();
