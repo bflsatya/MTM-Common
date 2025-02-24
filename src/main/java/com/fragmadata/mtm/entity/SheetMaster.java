@@ -73,8 +73,8 @@ public class SheetMaster {
 	@Column(name = "IsActive")
 	private Boolean isActive;
 	
-	@Column(name = "MtmCalculationDBField")
-	private String mtmCalculationDBField;
+	@Column(name = "mtmCurrencyFieldName")
+	private String mtmCurrencyFieldName;
 
 	@OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
 	@JsonManagedReference
