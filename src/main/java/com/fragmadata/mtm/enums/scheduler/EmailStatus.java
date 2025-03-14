@@ -23,6 +23,7 @@ public enum EmailStatus {
     EMAIL_CONFIG_NOT_MATCHED,
     QUEUED_FOR_ATTACHMENT_IDENTIFICATION,
     PROCESSED,
+    NO_ATTACHMENTS_FOUND_TO_PROCESS,
     FAILED;
 
     EmailStatus() {}
@@ -30,6 +31,9 @@ public enum EmailStatus {
 
     private static List<String> successStatusList = new ArrayList<>();
     private static List<String> errorStatusList = new ArrayList<>();
+    private static List<String> errorStatusListForEmailInstance = new ArrayList<>();
+    private static List<String> errorStatusListForEmailAttachmentInstance = new ArrayList<>();
+    private static List<String> errorStatusListForFileAttachmentSheetInstance = new ArrayList<>();
 
     static {
         successStatusList.add(SUCCESS.name());
@@ -42,6 +46,12 @@ public enum EmailStatus {
         errorStatusList.add(SHEET_CONFIG_MISMATCHED.name());
         errorStatusList.add(PARSING_FAILED.name());
         successStatusList.add(READ_COMPLETE.name());
+        errorStatusListForEmailInstance.add(FAILED.name());
+        errorStatusListForEmailInstance.add(NO_ATTACHMENTS_FOUND_TO_PROCESS.name());
+        errorStatusListForEmailAttachmentInstance.add(PARSING_FAILED.name());
+        errorStatusListForEmailAttachmentInstance.add(CONFIG_NOT_MATCHED.name());
+        errorStatusListForFileAttachmentSheetInstance.add(FAILED.name());
+        errorStatusListForFileAttachmentSheetInstance.add(SHEET_CONFIG_MISMATCHED.name());
     }
 
 
@@ -52,4 +62,17 @@ public enum EmailStatus {
     public static List<String> getErrorStatusList() {
         return errorStatusList;
     }
+
+	public static List<String> getErrorStatusListForEmailInstance() {
+		return errorStatusListForEmailInstance;
+	}
+
+	public static List<String> getErrorStatusListForEmailAttachmentInstance() {
+		return errorStatusListForEmailAttachmentInstance;
+	}
+
+	public static List<String> getErrorStatusListForFileAttachmentSheetInstance() {
+		return errorStatusListForFileAttachmentSheetInstance;
+	}
+  
 }
