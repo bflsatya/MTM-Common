@@ -83,6 +83,9 @@ public class EmailInstance {
     @Column(name = "UpdatedDate")
     private LocalDateTime updatedDate;
 
+    @Column(name = "NumberOfAttachments")
+    private Integer numberOfAttachments;
+
     @Version
     @Column(name = "Version")
     private Integer version;

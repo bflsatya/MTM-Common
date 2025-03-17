@@ -72,6 +72,9 @@ public class EmailAttachmentInstance {
     @JsonManagedReference
     private List<MTMParsedData> mtmParsedData;
 
+    @Column(name = "SheetCount")
+    private Integer sheetCount;
+
     @Version
     @Column(name = "Version")
     private Long version;
