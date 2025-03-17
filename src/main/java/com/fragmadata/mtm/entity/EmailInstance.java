@@ -88,6 +88,6 @@ public class EmailInstance {
 
     @Version
     @Column(name = "Version")
-    private Integer version;
+    private Long version;
 
 }
