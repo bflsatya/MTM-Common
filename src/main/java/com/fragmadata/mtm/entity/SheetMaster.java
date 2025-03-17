@@ -76,7 +76,7 @@ public class SheetMaster {
 	@Column(name = "mtmCurrencyFieldName")
 	private String mtmCurrencyFieldName;
 
-	@OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "sheetMaster", cascade = CascadeType.ALL, orphanRemoval = true)
 	@JsonManagedReference
 	private List<SheetFieldMapping> sheetFieldMapping=new ArrayList<>();
 

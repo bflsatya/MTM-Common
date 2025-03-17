@@ -25,7 +25,7 @@ public class SheetFieldMapping {
 	@ManyToOne
 	@JoinColumn(name = "SheetMasterID", nullable = false)
 	@JsonBackReference
-	private SheetMaster sheet;
+	private SheetMaster sheetMaster;
 
 	@Column(name = "ExcelColumnName")
 	private String excelColumnName;
