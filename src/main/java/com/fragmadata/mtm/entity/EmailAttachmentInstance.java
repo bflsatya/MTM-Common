@@ -25,7 +25,7 @@ public class EmailAttachmentInstance {
     @Column(name = "EmailAttachmentInstanceID")
     private Long emailAttachmentId;
 
-    @ManyToOne
+    @ManyToOne( cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "EmailInstanceID", nullable = false)
     private EmailInstance emailInstance;
 
@@ -65,7 +65,8 @@ public class EmailAttachmentInstance {
     @Column(name = "StatusLog")
     private String failureReason;
 
-    @OneToMany(mappedBy = "emailAttachmentInstance")
+    @OneToMany(mappedBy = "emailAttachmentInstance",
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<FileAttachmentSheetInstance> fileAttachmentSheetInstance;
 
     @OneToMany(mappedBy = "emailAttachmentInstance")

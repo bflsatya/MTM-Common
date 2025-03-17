@@ -59,7 +59,8 @@ public class EmailInstance {
     @Column(name = "CreatedDate")
     private LocalDateTime createdDate;
 
-    @OneToMany(mappedBy = "emailInstance")
+    @OneToMany(mappedBy = "emailInstance",
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<EmailAttachmentInstance> emailAttachmentInstance;
 
     @OneToMany(mappedBy = "emailInstance")
