@@ -66,6 +66,9 @@ public class MTMParsedData {
     @Column(name = "CreatedBy")
     private String createdBy;
 
+    @Column(name = "RecordDate")
+    private LocalDateTime recordDate;
+
     @Column(name = "CreatedDate")
     private LocalDateTime createdDate;
 
