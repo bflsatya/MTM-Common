@@ -1,5 +1,6 @@
 package com.fragmadata.mtm.entity.scheduler;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fragmadata.mtm.enums.scheduler.SchedulerStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -20,10 +21,10 @@ public class EmailPollingDetails {
     private Long id;
 
     @Column(name = "StartDateTime")
-    private LocalDateTime startTime;
+    private LocalDateTime startDateTime;
 
     @Column(name = "EndDateTime")
-    private LocalDateTime endTime;
+    private LocalDateTime endDateTime;
 
     @Column(name = "NoOfEmailsDownloaded")
     private int noOfEmailsDownloaded;
@@ -34,6 +35,7 @@ public class EmailPollingDetails {
 
     @OneToMany(mappedBy = "emailPollingDetails",
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JsonIgnore
     private List<EmailPollingStatusHistory> emailStatusHistories;
 
     @Version
