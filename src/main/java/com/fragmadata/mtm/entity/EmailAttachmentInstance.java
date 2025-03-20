@@ -54,7 +54,7 @@ public class EmailAttachmentInstance {
     private LocalDateTime updatedDate;
 
     @ManyToOne
-    @JoinColumn(name = "FileMasterID", nullable = false)
+    @JoinColumn(name = "FileMasterID")
     @JsonBackReference
     private FileMaster file;
 

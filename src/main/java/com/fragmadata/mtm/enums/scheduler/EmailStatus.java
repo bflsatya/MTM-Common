@@ -24,6 +24,7 @@ public enum EmailStatus {
     QUEUED_FOR_ATTACHMENT_IDENTIFICATION,
     PROCESSED,
     NO_ATTACHMENTS_FOUND_TO_PROCESS,
+    PARSING_IN_PROGRESS,
     FAILED;
 
     EmailStatus() {}
@@ -34,6 +35,7 @@ public enum EmailStatus {
     private static List<String> errorStatusListForEmailInstance = new ArrayList<>();
     private static List<String> errorStatusListForEmailAttachmentInstance = new ArrayList<>();
     private static List<String> errorStatusListForFileAttachmentSheetInstance = new ArrayList<>();
+    private static List<String> inProgressStatusListForAll = new ArrayList<>();
 
     static {
         successStatusList.add(SUCCESS.name());
@@ -52,6 +54,7 @@ public enum EmailStatus {
         errorStatusListForEmailAttachmentInstance.add(CONFIG_NOT_MATCHED.name());
         errorStatusListForFileAttachmentSheetInstance.add(FAILED.name());
         errorStatusListForFileAttachmentSheetInstance.add(SHEET_CONFIG_MISMATCHED.name());
+        inProgressStatusListForAll.add(PARSING_IN_PROGRESS.name());
     }
 
 
@@ -74,5 +77,9 @@ public enum EmailStatus {
 	public static List<String> getErrorStatusListForFileAttachmentSheetInstance() {
 		return errorStatusListForFileAttachmentSheetInstance;
 	}
+
+    public static List<String> getInProgressStatusListForAll() {
+        return inProgressStatusListForAll;
+    }
   
 }

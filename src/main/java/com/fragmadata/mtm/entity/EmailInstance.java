@@ -44,7 +44,7 @@ public class EmailInstance {
 //	private byte[] emailStoredAsBlob;
 
     @ManyToOne
-    @JoinColumn(name = "EmailMasterID", nullable = false)
+    @JoinColumn(name = "EmailMasterID")
     private Email email;
 
     @Column(name = "Status")
