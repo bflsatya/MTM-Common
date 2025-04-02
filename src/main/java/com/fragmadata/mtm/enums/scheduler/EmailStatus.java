@@ -25,6 +25,7 @@ public enum EmailStatus {
     PROCESSED,
     NO_ATTACHMENTS_FOUND_TO_PROCESS,
     PARSING_IN_PROGRESS,
+    PARTIALLY_PROCESSED,
     FAILED;
 
     EmailStatus() {}
@@ -40,7 +41,7 @@ public enum EmailStatus {
     static {
         successStatusList.add(SUCCESS.name());
         successStatusList.add(PROCESSED.name());
-
+        successStatusList.add(PARTIALLY_PROCESSED.name());
         errorStatusList.add(FAILED.name());
         errorStatusList.add(FAILURE.name());
         errorStatusList.add(CONFIG_NOT_MATCHED.name());
