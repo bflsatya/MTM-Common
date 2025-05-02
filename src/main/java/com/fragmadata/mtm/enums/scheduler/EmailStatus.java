@@ -6,7 +6,6 @@ import java.util.List;
 public enum EmailStatus {
 
     SUCCESS,
-    FAILURE,
     SYSTEM_ERROR,
     VALIDATION,
     INFORMATION,
@@ -43,7 +42,6 @@ public enum EmailStatus {
         successStatusList.add(PROCESSED.name());
         successStatusList.add(PARTIALLY_PROCESSED.name());
         errorStatusList.add(FAILED.name());
-        errorStatusList.add(FAILURE.name());
         errorStatusList.add(CONFIG_NOT_MATCHED.name());
         errorStatusList.add(EMAIL_CONFIG_NOT_MATCHED.name());
         errorStatusList.add(SHEET_CONFIG_MISMATCHED.name());

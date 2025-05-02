@@ -21,6 +21,12 @@ public class SchedulerControl {
     @Column(name = "enabled", nullable = false)
     private boolean enabled;
 
+    @Column(name = "fixed_delay", nullable = true)
+    private Long fixedDelay;
+
+    @Column(name = "cron", nullable = true)
+    private String cron;
+
     @Version
     @Column(name = "version")
     private Long version;
