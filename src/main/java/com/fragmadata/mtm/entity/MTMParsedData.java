@@ -154,7 +154,7 @@ public class MTMParsedData {
     private String closingSpot;
 
     @Column(name = "COBDate")
-    private LocalDateTime COBDate;
+    private String COBDate;
 
     @Column(name = "Comment")
     private String comment;
@@ -202,7 +202,7 @@ public class MTMParsedData {
     private String dealType;
 
     @Column(name = "DeliveryDate")
-    private LocalDateTime deliveryDate;
+    private String deliveryDate;
 
     @Column(name = "Delta")
     private BigDecimal delta;
@@ -211,7 +211,7 @@ public class MTMParsedData {
     private String deltaCcy;
 
     @Column(name = "EffDate")
-    private LocalDateTime effDate;
+    private String effDate;
 
     @Column(name = "Extra1")
     private String extra1;
@@ -301,7 +301,7 @@ public class MTMParsedData {
     private String forward;
 
     @Column(name = "FXDate")
-    private LocalDateTime fxDate;
+    private String fxDate;
 
     @Column(name = "FxRate")
     private String fxRate;
@@ -343,7 +343,7 @@ public class MTMParsedData {
     private Boolean isProcessed;
 
     @Column(name = "KnockInDate")
-    private LocalDateTime knockInDate;
+    private String knockInDate;
 
     @Column(name = "Leg1Accrual")
     private BigDecimal leg1Accrual;
@@ -379,7 +379,7 @@ public class MTMParsedData {
     private String longOrShort;
 
     @Column(name = "MaturityDate")
-    private LocalDateTime maturityDate;
+    private String maturityDate;
 
     @Column(name = "MLFreq")
     private String mlfreq;
@@ -394,7 +394,7 @@ public class MTMParsedData {
     private BigDecimal mtm;
 
     @Column(name = "MtMDateCOB")
-    private LocalDateTime MtMDateCOB;
+    private String MtMDateCOB;
 
     @Column(name = "MTMLessAccruedInterest")
     private String mtmLessAccruedInterest;
@@ -466,7 +466,7 @@ public class MTMParsedData {
     private String premiumCcy;
 
     @Column(name = "PremiumValueDate")
-    private LocalDateTime premiumValueDate;
+    private String premiumValueDate;
 
     @Column(name = "Price")
     private BigDecimal price;
@@ -523,7 +523,7 @@ public class MTMParsedData {
     private BigDecimal secondaryMtm;
 
     @Column(name = "SettlementDate")
-    private LocalDateTime settlementDate;
+    private String settlementDate;
 
     @Column(name = "SourcePosition")
     private String sourcePosition;
@@ -538,7 +538,7 @@ public class MTMParsedData {
     private String spreadAtMaturity;
 
     @Column(name = "StartDate")
-    private LocalDateTime startDate;
+    private String startDate;
 
     @Column(name = "StrikePrice")
     private BigDecimal strikePrice;
@@ -556,7 +556,7 @@ public class MTMParsedData {
     private String totalValue;
 
     @Column(name = "TradeDate")
-    private LocalDateTime tradeDate;
+    private String tradeDate;
 
     @Column(name = "Trade_ID")
     private String tradeId;
@@ -574,10 +574,10 @@ public class MTMParsedData {
     private String unit;
 
     @Column(name = "ValuationDate")
-    private LocalDateTime valuationDate;
+    private String valuationDate;
 
     @Column(name = "ValueDate")
-    private LocalDateTime valueDate;
+    private String valueDate;
 
     @Version
     @Column(name = "Version")
